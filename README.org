@@ -1,4 +1,9 @@
 
 * task time tracking
 
-using [[expo][https://expo.dev]]
+using [[https://expo.dev][expo]]
+
+
+#+begin_src shell
+npx expo start
+#+end_src
