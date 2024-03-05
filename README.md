@@ -1,2 +1,0 @@
-# ttt
-task time tracking
