@@ -1,2 +1,7 @@
 # ttt
-thesis template in typst
+
+thesis template in `typst`
+
+## usage
+
+see `Makefile`

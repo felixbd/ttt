@@ -1,0 +1,25 @@
+# default:
+#   tags:
+#     - fubar
+
+stages:
+  - build
+
+build_artifact:
+  stage: build
+  image:
+    name: "ghcr.io/typst/typst:latest"
+    entrypoint: [""]
+  script:
+    - mkdir -p output
+    # - /bin/typst init @preview/charged-ieee:0.1.3
+    - /bin/typst compile main.typ output/main.pdf
+    - ls -laRh ./output
+  artifacts:
+    paths:
+      - "output/main.pdf"
+    expire_in: 1 week
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: manual
